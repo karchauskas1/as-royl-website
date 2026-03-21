@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АС-РОЙЛ — Корма нового поколения из рапса</title>
+  <meta name="description" content="АС-РОЙЛ — инновационный стартап по переработке и производству бионатуральных кормов из рапса. 100% российские технологии.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #0a0a0f;
+      color: #e4e4e7;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: all 0.4s;
+    }
+    .nav.scrolled {
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 14px 0;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: #84cc16; }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #a1a1aa;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    /* ===== CONTAINERS ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    section {
+      padding: 140px 0;
+      position: relative;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(132,204,22,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(40px, -40px); }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(132,204,22,0.1);
+      border: 1px solid rgba(132,204,22,0.2);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #84cc16;
+      margin-bottom: 32px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #84cc16;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -3px;
+      color: #fafafa;
+      margin-bottom: 28px;
+    }
+    .hero h1 .accent {
+      background: linear-gradient(135deg, #84cc16, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 20px;
+      color: #a1a1aa;
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 60px;
+    }
+    .hero-stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fafafa;
+      letter-spacing: -1px;
+    }
+    .hero-stat-value span { color: #84cc16; }
+    .hero-stat-label {
+      font-size: 14px;
+      color: #71717a;
+      margin-top: 4px;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-label {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #84cc16;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      color: #fafafa;
+      letter-spacing: -2px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .section-desc {
+      font-size: 18px;
+      color: #a1a1aa;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ===== ABOUT ===== */
+    .about { background: #0d0d14; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 60px;
+    }
+    .about-text p {
+      font-size: 17px;
+      color: #a1a1aa;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+    .about-text strong { color: #e4e4e7; }
+    .about-visual {
+      position: relative;
+    }
+    .about-card {
+      background: linear-gradient(135deg, rgba(132,204,22,0.06), rgba(34,197,94,0.04));
+      border: 1px solid rgba(132,204,22,0.12);
+      border-radius: 24px;
+      padding: 48px;
+    }
+    .about-card-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(132,204,22,0.1);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: #84cc16;
+    }
+    .about-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fafafa;
+      margin-bottom: 16px;
+    }
+    .about-card p {
+      font-size: 16px;
+      color: #a1a1aa;
+      line-height: 1.7;
+    }
+
+    /* ===== TECHNOLOGY ===== */
+    .tech-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 80px;
+    }
+    .tech-step {
+      position: relative;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 40px 32px;
+      transition: all 0.4s;
+    }
+    .tech-step:hover {
+      background: rgba(132,204,22,0.04);
+      border-color: rgba(132,204,22,0.15);
+      transform: translateY(-4px);
+    }
+    .tech-step-num {
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(180deg, rgba(132,204,22,0.3), transparent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .tech-step h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fafafa;
+      margin-bottom: 12px;
+    }
+    .tech-step p {
+      font-size: 15px;
+      color: #71717a;
+      line-height: 1.7;
+    }
+    .tech-highlight {
+      margin-top: 60px;
+      background: linear-gradient(135deg, rgba(132,204,22,0.08), rgba(34,197,94,0.04));
+      border: 1px solid rgba(132,204,22,0.15);
+      border-radius: 20px;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .tech-highlight-icon {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      background: rgba(132,204,22,0.15);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #84cc16;
+    }
+    .tech-highlight p {
+      font-size: 17px;
+      color: #d4d4d8;
+      line-height: 1.7;
+    }
+    .tech-highlight strong { color: #84cc16; }
+
+    /* ===== ADVANTAGES ===== */
+    .advantages { background: #0d0d14; }
+    .adv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .adv-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 40px;
+      transition: all 0.4s;
+    }
+    .adv-card:hover {
+      border-color: rgba(132,204,22,0.2);
+      transform: translateY(-2px);
+    }
+    .adv-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(132,204,22,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: #84cc16;
+    }
+    .adv-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fafafa;
+      margin-bottom: 12px;
+    }
+    .adv-card p {
+      font-size: 15px;
+      color: #71717a;
+      line-height: 1.7;
+    }
+    .adv-card .stat {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #84cc16;
+    }
+
+    /* ===== PRODUCTS ===== */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .product-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #84cc16, #22c55e);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .product-card:hover::before { opacity: 1; }
+    .product-card:hover {
+      border-color: rgba(132,204,22,0.2);
+      transform: translateY(-4px);
+    }
+    .product-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      background: rgba(132,204,22,0.08);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+    .product-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fafafa;
+      margin-bottom: 10px;
+    }
+    .product-card p {
+      font-size: 14px;
+      color: #71717a;
+      line-height: 1.6;
+    }
+
+    /* ===== PARTNERS ===== */
+    .partners { background: #0d0d14; }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+    }
+    .partner-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      transition: all 0.4s;
+    }
+    .partner-card:hover {
+      border-color: rgba(132,204,22,0.2);
+    }
+    .partner-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fafafa;
+      margin-bottom: 8px;
+    }
+    .partner-card p {
+      font-size: 14px;
+      color: #71717a;
+    }
+
+    /* ===== MISSION ===== */
+    .mission-block {
+      margin-top: 100px;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mission-block blockquote {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #d4d4d8;
+      line-height: 1.6;
+      font-style: italic;
+      position: relative;
+      padding: 0 20px;
+    }
+    .mission-block blockquote::before {
+      content: '\201C';
+      position: absolute;
+      top: -20px;
+      left: -10px;
+      font-size: 5rem;
+      color: rgba(132,204,22,0.2);
+      font-style: normal;
+      line-height: 1;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 60px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+    .footer p {
+      font-size: 14px;
+      color: #52525b;
+    }
+    .footer .logo-f {
+      font-size: 18px;
+      font-weight: 800;
+      color: #71717a;
+      margin-bottom: 12px;
+    }
+    .footer .logo-f span { color: #84cc16; }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .tech-steps { grid-template-columns: 1fr; }
+      .adv-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-stats { gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 100px 0; }
+      .container { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-stats { flex-direction: column; gap: 24px; }
+      .products-grid { grid-template-columns: 1fr; }
+      .partners-grid { grid-template-columns: 1fr; }
+      .tech-highlight { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .hero h1 { letter-spacing: -1.5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">АС-<span>РОЙЛ</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">О продукте</a></li>
+        <li><a href="#tech">Технология</a></li>
+        <li><a href="#advantages">Преимущества</a></li>
+        <li><a href="#products">Каталог</a></li>
+        <li><a href="#partners">Партнёры</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Инновационный стартап</div>
+        <h1>Корма нового поколения<br>для <span class="accent">здорового роста</span></h1>
+        <p class="hero-desc">Производим бионатуральные корма из рапса по собственной технологии. 100% российские технологии, полный цикл в Ставропольском крае.</p>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-value">95<span>%</span></div>
+            <div class="hero-stat-label">Усвояемость белка</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">65<span>°C</span></div>
+            <div class="hero-stat-label">Щадящая обработка</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">98<span>%</span></div>
+            <div class="hero-stat-label">Сохранение витаминов</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-label reveal">О продукте</div>
+      <h2 class="section-title reveal">Что мы делаем</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>Мы производим <strong>частично дигидролизованную рапсовую муку</strong>, обогащённую витаминно-минеральными премиксами. Это инновационный кормовой продукт, который решает проблему импортозамещения белков в рационах животных и рыб.</p>
+          <p>Наша разработка — это белок, «упакованный» в форму, которая усваивается животными на 95%, убрав всё лишнее и сохранив всё полезное.</p>
+        </div>
+        <div class="about-visual reveal reveal-delay-2">
+          <div class="about-card">
+            <div class="about-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Импортозамещение</h3>
+            <p>Полный цикл производства в России. Замена импортных аналогов позволяет экономить миллиарды рублей для животноводческой отрасли.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="tech" id="tech">
+    <div class="container">
+      <div class="section-label reveal">Технология</div>
+      <h2 class="section-title reveal">Как мы это делаем</h2>
+      <p class="section-desc reveal">Продукт проходит многоступенчатую щадящую обработку, сохраняя максимум полезных веществ</p>
+
+      <div class="tech-steps">
+        <div class="tech-step reveal reveal-delay-1">
+          <div class="tech-step-num">01</div>
+          <h3>Очистка и замачивание</h3>
+          <p>Рапс очищается от примесей и проходит подготовительный этап замачивания для оптимальной обработки.</p>
+        </div>
+        <div class="tech-step reveal reveal-delay-2">
+          <div class="tech-step-num">02</div>
+          <h3>Частичный дигидролиз</h3>
+          <p>Щадящая температура не выше 60-65°C позволяет сохранить до 98% витаминов и нативные структуры аминокислот.</p>
+        </div>
+        <div class="tech-step reveal reveal-delay-3">
+          <div class="tech-step-num">03</div>
+          <h3>Обогащение премиксами</h3>
+          <p>Измельчение и смешивание с витаминно-минеральными премиксами для создания продукта под разные виды животных.</p>
+        </div>
+      </div>
+
+      <div class="tech-highlight reveal">
+        <div class="tech-highlight-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <p>В отличие от конкурентов, использующих агрессивную термообработку при <strong>100-120°C</strong>, наша технология работает при <strong>не выше 65°C</strong> — это сохраняет до <strong>98% витаминов группы B, E</strong> и нативные структуры аминокислот (лизин, метионин), которые при стандартной переработке теряют до 40% биодоступности.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="advantages" id="advantages">
+    <div class="container">
+      <div class="section-label reveal">Преимущества</div>
+      <h2 class="section-title reveal">Почему АС-РОЙЛ</h2>
+
+      <div class="adv-grid">
+        <div class="adv-card reveal reveal-delay-1">
+          <div class="adv-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Щадящая технология</h3>
+          <p>Нагрев не выше 65°C сохраняет до 98% витаминов группы B, E и нативные структуры аминокислот.</p>
+          <div class="stat">65°C</div>
+        </div>
+        <div class="adv-card reveal reveal-delay-2">
+          <div class="adv-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3>Экономическая выгода</h3>
+          <p>Замена импортных аналогов позволяет экономить миллиарды рублей для всей животноводческой отрасли.</p>
+          <div class="stat">-40%</div>
+        </div>
+        <div class="adv-card reveal reveal-delay-3">
+          <div class="adv-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3>Экологичность</h3>
+          <p>Высокая усвояемость сокращает выбросы азота на 18-22% и фосфора в окружающую среду.</p>
+          <div class="stat">-22%</div>
+        </div>
+        <div class="adv-card reveal reveal-delay-4">
+          <div class="adv-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Локализация</h3>
+          <p>Полный цикл в Ставропольском крае гарантирует стабильность поставок и независимость от санкций.</p>
+          <div class="stat">100%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-label reveal">Каталог</div>
+      <h2 class="section-title reveal">Продукция</h2>
+      <p class="section-desc reveal">Линейка продуктов на основе дигидролизованной рапсовой муки</p>
+
+      <div class="products-grid">
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-icon">🌾</div>
+          <h3>Рапсовая мука базовая</h3>
+          <p>Для комбикормовых заводов. Универсальная основа для производства кормов.</p>
+        </div>
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-icon">🐄</div>
+          <h3>Премикс для КРС</h3>
+          <p>Специализированная добавка для крупного рогатого скота.</p>
+        </div>
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-icon">🐔</div>
+          <h3>Премикс для птицы</h3>
+          <p>Оптимизированный состав для домашней птицы всех возрастов.</p>
+        </div>
+        <div class="product-card reveal reveal-delay-4">
+          <div class="product-icon">🐟</div>
+          <h3>Премикс для аквакультуры</h3>
+          <p>Полноценная замена рыбной муки для аквакультуры.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners" id="partners">
+    <div class="container">
+      <div class="section-label reveal">Сотрудничество</div>
+      <h2 class="section-title reveal">Партнёры</h2>
+
+      <div class="partners-grid">
+        <div class="partner-card reveal reveal-delay-1">
+          <h3>ФСИ</h3>
+          <p>Фонд Содействия Инновациям</p>
+        </div>
+        <div class="partner-card reveal reveal-delay-2">
+          <h3>МинЭК</h3>
+          <p>Министерство экономического развития</p>
+        </div>
+        <div class="partner-card reveal reveal-delay-3">
+          <h3>СтГАУ</h3>
+          <p>Ставропольский государственный аграрный университет</p>
+        </div>
+      </div>
+
+      <div class="mission-block reveal">
+        <blockquote>Сделать российский агропромышленный рынок устойчивым и независимым от импортных компонентов.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="logo-f">АС-<span>РОЙЛ</span></div>
+      <p>&copy; 2025 АС-РОЙЛ. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

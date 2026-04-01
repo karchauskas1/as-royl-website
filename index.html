@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>АС-РОЙЛ — Корма нового поколения из рапса</title>
-  <meta name="description" content="АС-РОЙЛ — инновационный стартап по переработке и производству бионатуральных кормов из рапса. 100% российские технологии.">
+  <title>AS-ROIL — Корма нового поколения из рапса</title>
+  <meta name="description" content="AS-ROIL — инновационный стартап по переработке и производству бионатуральных кормов из рапса. 100% российские технологии.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -44,12 +44,16 @@
       justify-content: space-between;
     }
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 20px;
       font-weight: 800;
       color: #1a1a1a;
       letter-spacing: -0.5px;
+      text-decoration: none;
     }
-    .nav-logo span { color: #16a34a; }
+    .nav-logo-text span { color: #ca8a04; }
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
       font-size: 14px;
@@ -69,7 +73,7 @@
       display: flex;
       align-items: center;
       padding-top: 80px;
-      background: linear-gradient(170deg, #f0fdf4 0%, #fafaf8 40%, #fafaf8 100%);
+      background: linear-gradient(170deg, #fefce8 0%, #fafaf8 40%, #fafaf8 100%);
     }
     .hero-content {
       max-width: 750px;
@@ -78,19 +82,19 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #f0fdf4;
+      background: #fefce8;
       padding: 8px 20px;
       border-radius: 50px;
       font-size: 13px;
       font-weight: 600;
-      color: #16a34a;
+      color: #ca8a04;
       margin-bottom: 32px;
     }
     .hero-badge::before {
       content: '';
       width: 8px;
       height: 8px;
-      background: #16a34a;
+      background: #ca8a04;
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
@@ -106,7 +110,7 @@
       color: #0a0a0a;
       margin-bottom: 24px;
     }
-    .hero h1 .accent { color: #16a34a; }
+    .hero h1 .accent { color: #ca8a04; }
     .hero-desc {
       font-size: 19px;
       color: #52525b;
@@ -121,7 +125,7 @@
       color: #0a0a0a;
       letter-spacing: -1px;
     }
-    .hero-stat-value span { color: #16a34a; }
+    .hero-stat-value span { color: #ca8a04; }
     .hero-stat-label {
       font-size: 14px;
       color: #a1a1aa;
@@ -134,7 +138,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: #16a34a;
+      color: #ca8a04;
       margin-bottom: 16px;
     }
     .section-title {
@@ -153,7 +157,11 @@
     }
 
     /* ABOUT */
-    .about { background: #f4f4f2; }
+    .about {
+      background: linear-gradient(rgba(244,244,242,0.72), rgba(244,244,242,0.72)), url('raps-bg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -177,13 +185,13 @@
     .about-card-icon {
       width: 56px;
       height: 56px;
-      background: #f0fdf4;
+      background: #fefce8;
       border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 20px;
-      color: #16a34a;
+      color: #ca8a04;
     }
     .about-card h3 {
       font-size: 1.4rem;
@@ -218,7 +226,7 @@
     .tech-step-num {
       font-size: 3.5rem;
       font-weight: 900;
-      color: #dcfce7;
+      color: #eab308;
       line-height: 1;
       margin-bottom: 20px;
     }
@@ -235,7 +243,7 @@
     }
     .tech-highlight {
       margin-top: 48px;
-      background: #f0fdf4;
+      background: rgba(202,138,4,0.08);
       border-radius: 20px;
       padding: 36px 44px;
       display: flex;
@@ -246,19 +254,19 @@
       flex-shrink: 0;
       width: 52px;
       height: 52px;
-      background: #dcfce7;
+      background: #eab308;
       border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #16a34a;
+      color: #ca8a04;
     }
     .tech-highlight p {
       font-size: 16px;
       color: #3f3f46;
       line-height: 1.7;
     }
-    .tech-highlight strong { color: #16a34a; font-weight: 700; }
+    .tech-highlight strong { color: #ca8a04; font-weight: 700; }
 
     /* ADVANTAGES */
     .advantages { background: #f4f4f2; }
@@ -282,13 +290,13 @@
     .adv-icon {
       width: 48px;
       height: 48px;
-      background: #f0fdf4;
+      background: #fefce8;
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 20px;
-      color: #16a34a;
+      color: #ca8a04;
     }
     .adv-card h3 {
       font-size: 1.15rem;
@@ -306,7 +314,7 @@
       margin-top: 16px;
       font-size: 2rem;
       font-weight: 800;
-      color: #16a34a;
+      color: #ca8a04;
     }
 
     /* PRODUCTS */
@@ -328,16 +336,32 @@
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
+    .product-img {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .product-img img {
+      width: 120%;
+      height: 120%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-img img {
+      transform: scale(1.05);
+    }
     .product-icon {
       width: 64px;
       height: 64px;
       margin: 0 auto 20px;
-      background: #f0fdf4;
+      background: #fefce8;
       border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #16a34a;
+      color: #ca8a04;
     }
     .product-card h3 {
       font-size: 1.05rem;
@@ -371,17 +395,31 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
+    .partner-logo {
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .partner-logo img {
+      max-width: 180px;
+      max-height: 80px;
+      object-fit: contain;
+    }
     .partner-card h3 {
-      font-size: 1.8rem;
+      font-size: 1.3rem;
       font-weight: 800;
-      color: #16a34a;
-      margin-bottom: 12px;
+      color: #0a0a0a;
+      margin-bottom: 8px;
       letter-spacing: -0.5px;
     }
     .partner-card p {
-      font-size: 15px;
-      color: #52525b;
+      font-size: 14px;
+      color: #ca8a04;
       line-height: 1.5;
+      font-weight: 500;
     }
 
     /* MISSION */
@@ -407,9 +445,61 @@
       top: -20px;
       left: -10px;
       font-size: 5rem;
-      color: #dcfce7;
+      color: #eab308;
       font-style: normal;
       line-height: 1;
+    }
+
+    /* CONTACTS */
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 56px;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .contact-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .contact-icon {
+      width: 52px;
+      height: 52px;
+      background: #fefce8;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ca8a04;
+      margin-bottom: 16px;
+    }
+    .contact-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ca8a04;
+      margin-bottom: 8px;
+    }
+    .contact-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0a0a0a;
+      line-height: 1.5;
+    }
+    .contact-value a {
+      color: #0a0a0a;
+      text-decoration: none;
+    }
+    .contact-value a:hover {
+      color: #ca8a04;
+    }
+    @media (max-width: 768px) {
+      .contacts-grid { grid-template-columns: 1fr; }
     }
 
     /* FOOTER */
@@ -425,7 +515,7 @@
       color: #a1a1aa;
       margin-bottom: 12px;
     }
-    .footer .logo-f span { color: #16a34a; }
+    .footer .logo-f span { color: #ca8a04; }
 
     /* ANIMATIONS */
     .reveal {
@@ -463,13 +553,14 @@
 
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">АС-<span>РОЙЛ</span></a>
+      <a href="#" class="nav-logo"><img src="logo-roil.png" alt="AS-ROIL" style="height:36px;width:36px;object-fit:cover;border-radius:50%;background:#f0efe9;" /><span class="nav-logo-text">AS-<span>ROIL</span></span></a>
       <ul class="nav-links">
         <li><a href="#about">О продукте</a></li>
         <li><a href="#tech">Технология</a></li>
         <li><a href="#advantages">Преимущества</a></li>
         <li><a href="#products">Каталог</a></li>
         <li><a href="#partners">Партнёры</a></li>
+        <li><a href="#contacts">Контакты</a></li>
       </ul>
     </div>
   </nav>
@@ -554,7 +645,7 @@
   <section class="advantages" id="advantages">
     <div class="container">
       <div class="section-label reveal">Преимущества</div>
-      <h2 class="section-title reveal">Почему АС-РОЙЛ</h2>
+      <h2 class="section-title reveal">Почему AS-ROIL</h2>
       <div class="adv-grid">
         <div class="adv-card reveal reveal-delay-1">
           <div class="adv-icon">
@@ -599,32 +690,32 @@
       <p class="section-desc reveal">Линейка продуктов на основе дигидролизованной рапсовой муки</p>
       <div class="products-grid">
         <div class="product-card reveal reveal-delay-1">
-          <div class="product-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <div class="product-img">
+            <img src="forel.png" alt="Рапсовая мука базовая" />
           </div>
           <h3>Рапсовая мука базовая</h3>
           <p>Для комбикормовых заводов. Универсальная основа для производства кормов.</p>
         </div>
         <div class="product-card reveal reveal-delay-2">
-          <div class="product-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+          <div class="product-img">
+            <img src="karp.png" alt="Премикс для аквакультуры" />
+          </div>
+          <h3>Премикс для аквакультуры</h3>
+          <p>Полноценная замена рыбной муки для аквакультуры.</p>
+        </div>
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-img">
+            <img src="telyata.png" alt="Премикс для КРС" />
           </div>
           <h3>Премикс для КРС</h3>
           <p>Специализированная добавка для крупного рогатого скота.</p>
         </div>
-        <div class="product-card reveal reveal-delay-3">
-          <div class="product-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 00-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+        <div class="product-card reveal reveal-delay-4">
+          <div class="product-img">
+            <img src="pticy.png" alt="Премикс для птицы" />
           </div>
           <h3>Премикс для птицы</h3>
           <p>Оптимизированный состав для домашней птицы всех возрастов.</p>
-        </div>
-        <div class="product-card reveal reveal-delay-4">
-          <div class="product-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h3>Премикс для аквакультуры</h3>
-          <p>Полноценная замена рыбной муки для аквакультуры.</p>
         </div>
       </div>
     </div>
@@ -635,18 +726,21 @@
       <div class="section-label reveal">Сотрудничество</div>
       <h2 class="section-title reveal">Партнёры</h2>
       <div class="partners-grid">
-        <div class="partner-card reveal reveal-delay-1">
+        <a href="https://fasie.ru" target="_blank" rel="noopener" class="partner-card reveal reveal-delay-1">
+          <div class="partner-logo"><img src="fsi.png" alt="ФСИ" /></div>
           <h3>ФСИ</h3>
           <p>Фонд Содействия Инновациям</p>
-        </div>
-        <div class="partner-card reveal reveal-delay-2">
+        </a>
+        <a href="https://economy.gov.ru" target="_blank" rel="noopener" class="partner-card reveal reveal-delay-2">
+          <div class="partner-logo"><img src="minek.png" alt="МинЭК" /></div>
           <h3>МинЭК</h3>
           <p>Министерство экономического развития</p>
-        </div>
-        <div class="partner-card reveal reveal-delay-3">
+        </a>
+        <a href="https://stgau.ru" target="_blank" rel="noopener" class="partner-card reveal reveal-delay-3">
+          <div class="partner-logo"><img src="stgau.png" alt="СтГАУ" /></div>
           <h3>СтГАУ</h3>
           <p>Ставропольский государственный аграрный университет</p>
-        </div>
+        </a>
       </div>
       <div class="mission-block reveal">
         <blockquote>Сделать российский агропромышленный рынок устойчивым и независимым от импортных компонентов.</blockquote>
@@ -654,10 +748,40 @@
     </div>
   </section>
 
+  <section class="contacts" id="contacts" style="background:#f4f4f2;">
+    <div class="container">
+      <div class="section-label reveal">Связь</div>
+      <h2 class="section-title reveal">Контакты</h2>
+      <div class="contacts-grid">
+        <div class="contact-card reveal reveal-delay-1">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-label">Адрес</div>
+          <div class="contact-value">356018, Ставропольский край, Новоалександровский р-н, п. Темижбекский, Светлая ул, зд. 1/2</div>
+        </div>
+        <div class="contact-card reveal reveal-delay-2">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-label">Телефон</div>
+          <div class="contact-value"><a href="tel:+79034423951">+7 903 442-39-51</a></div>
+        </div>
+        <div class="contact-card reveal reveal-delay-3">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:lil69uncle13sam@mail.ru">lil69uncle13sam@mail.ru</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="container">
-      <div class="logo-f">АС-<span>РОЙЛ</span></div>
-      <p>&copy; 2025 АС-РОЙЛ. Все права защищены.</p>
+      <div class="logo-f">AS-<span>ROIL</span></div>
+      <p>&copy; 2025 AS-ROIL. Все права защищены.</p>
     </div>
   </footer>
 

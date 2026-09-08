@@ -26,7 +26,7 @@
     .nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 20px 0;
+      padding: 12px 0;
       transition: all 0.4s;
     }
     .nav.scrolled {
@@ -34,7 +34,7 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       box-shadow: 0 1px 0 rgba(0,0,0,0.06);
-      padding: 14px 0;
+      padding: 8px 0;
     }
     .nav-inner {
       max-width: 1200px;
@@ -43,11 +43,19 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-platform-logo {
+      width: 84px;
+      height: auto;
+      flex-shrink: 0;
+      mix-blend-mode: multiply;
     }
     .nav-logo {
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-shrink: 0;
       font-size: 20px;
       font-weight: 800;
       color: #1a1a1a;
@@ -55,7 +63,7 @@
       text-decoration: none;
     }
     .nav-logo-text span { color: #ca8a04; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; margin-left: auto; white-space: nowrap; }
     .nav-links a {
       font-size: 14px;
       font-weight: 500;
@@ -73,7 +81,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-top: 80px;
+      padding-top: 104px;
       background: linear-gradient(170deg, #fefce8 0%, #fafaf8 40%, #fafaf8 100%);
     }
     .hero-content {
@@ -532,6 +540,8 @@
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-platform-logo { margin-left: auto; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .tech-steps { grid-template-columns: 1fr; }
       .adv-grid { grid-template-columns: 1fr; }
@@ -541,7 +551,10 @@
     @media (max-width: 768px) {
       section { padding: 80px 0; }
       .container { padding: 0 20px; }
-      .nav-links { display: none; }
+      .nav, .nav.scrolled { padding: 10px 0; }
+      .nav-inner { padding: 0 20px; }
+      .nav-platform-logo { width: 64px; }
+      .hero { padding-top: 80px; }
       .hero-stats { flex-direction: column; gap: 24px; }
       .products-grid { grid-template-columns: 1fr; }
       .partners-grid { grid-template-columns: 1fr; }
@@ -563,6 +576,7 @@
         <li><a href="#partners">Партнёры</a></li>
         <li><a href="#contacts">Контакты</a></li>
       </ul>
+      <img class="nav-platform-logo" src="university-platform.png" width="1888" height="1472" alt="Платформа университетского технологического предпринимательства">
     </div>
   </nav>
 
